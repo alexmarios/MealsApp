@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="3GE">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Libraries/3GE/jcommon-1.0.23.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Libraries/3GE/kotlin-stdlib-1.3.61.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Libraries/3GE/okhttp-4.2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Libraries/3GE/gson-2.8.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Libraries/3GE/okio-2.4.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Libraries/3GE/jfreechart-1.0.19.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

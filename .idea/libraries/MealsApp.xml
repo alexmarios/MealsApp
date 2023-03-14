@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="MealsApp">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/MealsApp.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
