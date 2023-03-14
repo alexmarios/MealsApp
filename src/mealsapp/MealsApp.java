@@ -2,7 +2,7 @@
 package mealsapp;
 
 // Εισαγωγή των απαραίτητων βιβλιοθηκών και κλάσεων για την εκτέλεση του προγράμματος
-import mealsapp.API.JsonParsers;
+
 import mealsapp.GUI.MainForm;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
