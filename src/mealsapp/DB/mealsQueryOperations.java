@@ -127,7 +127,7 @@ public class mealsQueryOperations {
             Meal searchMeal = em.createNamedQuery("Meal.findByStrmeal", Meal.class)
                     .setParameter("strmeal", meal)
                     .getSingleResult();
-            if (searchMeal.getIdmeal() == null || searchMeal.getIdmeal().equals("SavedByUser") ){
+            if (searchMeal.getIdmeal() == null || searchMeal.getIdmeal().equals("SavedByUser")){
                 // Αν το idmeal είναι null, τότε το αντικείμενο Meal δεν έχει αποθηκευτεί από τον χρήστη
                 result = false;
 
