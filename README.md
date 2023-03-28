@@ -73,7 +73,7 @@ Relevant instructions can be found in the document "Οδηγίες Εγκατά�
 
 ### Indicative:
 
-Snapshots from the implementation of project management, you can find details at folder "Instructions".
+Snapshots from the implementation of project management, you can find more details at folder "Instructions".
 
 ProjectLibre and Gantt charts:
 
