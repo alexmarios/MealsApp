@@ -67,11 +67,11 @@ import com.google.gson.annotations.SerializedName;
     @NamedQuery(name = "Meal.getTimesOfVisit", query = "SELECT m.timesofvisit FROM Meal m WHERE m.strmeal = :strmeal"),
     @NamedQuery(name = "Meal.getIdmeal", query = "SELECT m.idmeal FROM Meal m WHERE m.strmeal = :strmeal"),
     @NamedQuery(name = "Meal.getLikeStrMeal", query = "SELECT m FROM Meal m WHERE m.strmeal LIKE :strmeal ORDER BY m.strmeal ASC"),
-    @NamedQuery(name = "Meal.findByAbsoluteStrmeal", query = "SELECT m FROM Meal m WHERE ABS (m.strmeal) = :strmeal"),
+    @NamedQuery(name = "Meal.findByAbsoluteStrmeal", query = "SELECT m FROM Meal m WHERE ABS(m.strmeal) = :strmeal"),
     @NamedQuery(name = "Meal.findBygetIdcategory", query = "SELECT m.idcategory FROM Meal m WHERE m.idcategory = :idcategory")
-    
 
-        
+
+
 
 })
 public class Meal extends MealCategory implements Serializable {
