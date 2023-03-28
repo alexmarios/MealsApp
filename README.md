@@ -58,7 +58,7 @@ Several tools were used for the Scrum processes, such as:
 Figma was also used for designing the GUI mockups and Visual Paradigm for and ProjectLibre for drawing Gantt charts
 File sharing was done with Dropbox, and Google Docs and Online MS were also used Office, for shared authoring of required documents.
 In order to compile the application and run it, the necessary library import must be done.
-Relevant instructions can be found in the document ["Οδηγίες Εγκατάστασης & Χρήσης.docx"](Instructions/Οδηγίες Εγκατάστασης & Χρήσης.docx) .
+Relevant instructions can be found in the document ["Οδηγίες Εγκατάστασης & Χρήσης.docx"](/Instructions/Οδηγίες_Εγκατάστασης_&_Χρήσης.docx).
 
 
 ### Calculating the effort required per requirement:
