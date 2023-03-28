@@ -40,7 +40,7 @@ public class mealsQueryOperations {
                 // οπότε θέτουμε τα απαραίτητα πεδία (timesofvisit και idmeal) και κάνουμε merge
                 em.getTransaction().begin();
                 newMeal.setTimesofvisit(0);
-                newMeal.setIdmeal("SavedByUser");
+                newMeal.setIdmeal("NotSavedByUser");
                 em.merge(newMeal);
                 em.getTransaction().commit();
                 em.close();
@@ -127,7 +127,7 @@ public class mealsQueryOperations {
             Meal searchMeal = em.createNamedQuery("Meal.findByStrmeal", Meal.class)
                     .setParameter("strmeal", meal)
                     .getSingleResult();
-            if (searchMeal.getIdmeal() == null || searchMeal.getIdmeal().equals("SavedByUser")){
+            if (searchMeal.getIdmeal() == null || searchMeal.getIdmeal().equals("NotSavedByUser")){
                 // Αν το idmeal είναι null, τότε το αντικείμενο Meal δεν έχει αποθηκευτεί από τον χρήστη
                 result = false;
 
