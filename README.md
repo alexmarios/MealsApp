@@ -1,48 +1,71 @@
 # MealsApp
 
-Περιγραφή της εφαρμογής:
+### Description:
 
-  Στα πλαίσια της 3ης εργασίας του μαθήματος ΠΛΗ24 Σχεδιασμός Λογισμικού, ζητήθηκε από τους φοιτητές
-η ανάπτυξη μίας εφαρμογής με την ονομασία Meals App.
+  As part of the 3rd assignment of the course "Software Design" at Hellenic Open Univercity, 
+  students were asked to develop an application called Meals App.
 
-  Η εφαρμογή αντλεί, επεξεργάζεται και παρουσιάζει δεδομένα από την υπηρεσία ιστού (web service) που
-περιγράφεται στην ιστοσελίδα TheMealDB: https://themealdb.com/api.php
-Η Meals App παρέχει τις εν λόγω διαδικτυακές υπηρεσίες μέσω web services τύπου REST
-(Representational State Transfer), προκειμένου να χρησιμοποιηθούν από οποιοδήποτε ενδιαφερόμενο μέρος. Τα
-σχετικά δεδομένα επιστρέφονται σε μορφή JSON (JavaScript Object Notation).
-Μερικές από τις πληροφορίες που μπορούν να αντληθούν είναι:
+  The application draws, processes and presents data from the website [TheMealDB](https://themealdb.com/api.php). 
+The Meals App provides these web services via REST (Representational State Transfer) in order to be used by any interested party.
+The data is returned in JSON (JavaScript Object Notation) format.
+Some of the information that can be retrieved are:
+```
+- Searching for a meal by name.
+- Search a random meal by name.
+- Search for meals by meal category.
+- Filtering by meal category.
+- Search by meal type, search by meal type, search by ingredients, etc.
+```
 
-• Αναζήτηση γεύματος με το όνομα.
-• Αναζήτηση ενός τυχαίου γεύματος.
-• Αναζήτηση γευμάτων ανά κατηγοριών γευμάτων.
-• Φιλτράρισμα ανά κατηγορία γεύματος.
-• Αναζήτηση συστατικών κ.α.
-
-  Αφού αντληθούν τα δεδομένα η εφαρμογή μπορεί να τα αποθηκεύσει / επεξεργαστεί και σε τοπική βάση
-δεδομένων.
+  When the data has been extracted the application can also store/edit the data in a local database.
 
 
-Στόχος του έργου:
+### Project Objective:
 
-  Ο στόχος του έργου όπως ζητείται από την εργασία είναι η άντληση των δεδομένων από την API και η
-παρουσίαση αυτών στον χρήστη με απλό και σταθερό τρόπο.
-Συγκεκριμένα η themealdb.com είναι μία διαδικτυακή βάση δεδομένων με συνταγές και γεύματα από όλο
-τον κόσμο. Διαθέτει πάνω από 280 συνταγές, συμπεριλαμβανομένων παραδοσιακών και σύγχρονων πιάτων από
-διάφορες κουζίνες. Με τη φιλική προς το χρήστη διεπαφή της, ο ιστότοπος είναι εύκολος στην πλοήγηση,
-επιτρέποντας στους χρήστες να βρουν συνταγές για κάθε περίσταση.
+  The objective of the project as requested by the assignment is to extract the data from the API and present it to the user in a simple and stable way.
+Specifically, themealdb.com is an online database of recipes and meals from all over from all over the world. It features over 280 recipes, including traditional and contemporary dishes from various cuisines. With its user-friendly interface, the site is easy to navigate, allowing users to find recipes for any occasion.
 
-  Ένα από τα καλύτερα χαρακτηριστικά του themealdb.com είναι η λειτουργία αναζήτησης. Οι χρήστες
-μπορούν να αναζητήσουν συνταγές με βάση την κουζίνα, τον τύπο του γεύματος, το συστατικό. Ο ιστότοπος
-παρέχει επίσης βήμα προς βήμα οδηγίες για κάθε συνταγή.
-  Ο βασικός στόχος του έργου είναι η εφαρμογή Meals App να αντλεί δεδομένα από την themealdb.com
-και να τα παρουσιάζει.
-Ο χρήστης μπορεί πολύ εύκολα να αναζητήσει ένα γεύμα με διάφορους τρόπους, να αντλήσει τα δεδομένα
-τους και στη συνέχεια, να τα επεξεργαστεί ή αποθηκεύσει με τη βοήθεια ενός απλού και εύχρηστου γραφικού
-περιβάλλοντος (GUI).
+  One of the most useful features of [TheMealDB](https://themealdb.com/api.php)  is its search function. Itcan search for recipes by cuisine, meal type, ingredient. The site also provides step-by-step instructions for each recipe.
+  The main goal of the project is for the Meals App to pull data from themealdb.comand present it. The user can very easily search for a meal in various ways, pull the data and then edit or save it with the help of a simple and easy to use graphical user interface (GUI).
 
-  Παράλληλα μπορεί να εξάγει πίνακες με στατιστικά δεδομένα και εκτύπωσή τους σε αρχείο .pdf.
-Ο σχεδιασμός της εφαρμογή έγινε με τον γνώμονα να μπορεί να προστεθούν εύκολα και σύντομα νέες λειτουργίες
-χωρίς να επιβαρύνεται με σύνθετες μεθόδους ή υπολογισμούς.
+  At the same time it can export tables with statistical data and print them out in a .pdf file.
+The design of the application was made with the idea that new functions can be added easily and quickly
+without being burdened with complex methods or calculations.
 
 
+### Admissions:
 
+The flexibility of the code gives the general assumption that the Meals App can be extended with simple backend/frontend additions.
+The user can view the entity of a meal at any time in the local database and can pump or remove it if desired. The logic of the search in many ways is that it first detects if a meal exists in the API and then checks if it exists in the database and the user can accordingly select the data to be displayed.
+A table was used for the whole application operation, taking advantage of JPA's capabilities.
+On each search/visit/view of a meal either from the API or the db, a simple record is created with the basic data of the meal and a +1 is added to the corresponding field of that record.
+```
+The user has the option to delete all data or keep the meal stats.
+```
+We also considered that for random search to follow the above mentioned function as well.
+
+As for the application, it was implemented in Java and specifically JDK 17.0.2 was used. While Apache Derby (version 10.14.2.0) was used for the database. The GUI was created with Swing.
+
+For the collaboration of the team members in writing the code, github was used and for IDE, Netbeans IDE 16 was used.
+
+Several tools were used for the Scrum processes, such as:
+```
+- Planningpoker.com (for effort calculation and prioritization)
+- Trello (for backlog management)
+- Toggl (for recording the time each member spends on User Stories)
+- Midjourney (for visuals)
+```
+Figma was also used for designing the GUI mockups and Visual Paradigm for and ProjectLibre for drawing Gantt charts
+File sharing was done with Dropbox, and Google Docs and Online MS were also used Office, for shared authoring of required documents.
+In order to compile the application and run it, the necessary library import must be done.
+Relevant instructions can be found in the document "Οδηγίες Εγκατάστασης & Χρήσης.docx"
+
+
+### Calculating the effort required per requirement:
+  Soon we had to consider the factors that would help or hinder us for the project, according to the Project Management Body of Knowledge (PMBOK) we identified the following questions.
+```
+● How familiar are we with Java?
+● What knowledge do we need to reach the desired level?
+● Is there any relevant previous experience?
+● Can we work as a team or can we work as a team?
+```
