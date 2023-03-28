@@ -1,4 +1,4 @@
-# MealsApp
+# MealsApp :spaghetti:
 
 ### Description:
 
@@ -73,7 +73,7 @@ Relevant instructions can be found in the document "Οδηγίες Εγκατά�
 
 ### Indicative:
 
-Snapshots from the implementation of project management, you can find more details at folder "Instructions".
+Snapshots from the implementation of project management, you can find more details at folder ["Instructions"](Instructions.md).
 
 ProjectLibre and Gantt charts:
 
@@ -83,3 +83,9 @@ Burndown Chart:
 
 <img width="838" alt="Screenshot 2023-03-28 at 09 55 27" src="https://user-images.githubusercontent.com/32077784/228155587-fe0fe299-0669-4f7b-b3a9-3ee72879b79c.png">
 
+### Team: :handshake:
+|Student|Role|
+|:---|:---|
+|`Alex Marios Remountakis`|Scrum Master and Back-End Developer, responsible for the development of JPA db, API and Scrum.|
+|`Nikolaos Stefanatos`|Front-End Developer, responsible for development and maintenance of the interface of the application.|
+|`Michael Nikoltsios`|Full Stack Developer and Debugger helping and examining the code for errors that may occur.|
