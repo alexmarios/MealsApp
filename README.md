@@ -58,7 +58,7 @@ Several tools were used for the Scrum processes, such as:
 Figma was also used for designing the GUI mockups and Visual Paradigm for and ProjectLibre for drawing Gantt charts
 File sharing was done with Dropbox, and Google Docs and Online MS were also used Office, for shared authoring of required documents.
 In order to compile the application and run it, the necessary library import must be done.
-Relevant instructions can be found in the document "Οδηγίες Εγκατάστασης & Χρήσης.docx"
+Relevant instructions can be found in the document "Οδηγίες Εγκατάστασης & Χρήσης.docx" under the "Instructions" folder.
 
 
 ### Calculating the effort required per requirement:
@@ -69,3 +69,11 @@ Relevant instructions can be found in the document "Οδηγίες Εγκατά�
 ● Is there any relevant previous experience?
 ● Can we work as a team or can we work as a team?
 ```
+
+
+### Indicative:
+```
+Snapshots from the implementation of project management, you can find details at folder "Instructions".
+```
+ProjectLibre and Gantt charts:
+<img width="845" alt="Screenshot 2023-03-28 at 09 56 14" src="https://user-images.githubusercontent.com/32077784/228154684-60962020-c460-45b8-b710-f1b551583b78.png">
