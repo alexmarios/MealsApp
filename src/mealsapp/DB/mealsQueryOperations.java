@@ -9,17 +9,17 @@ import javax.persistence.Persistence;
 
 public class mealsQueryOperations {
 
-   //Μέθοδος για την εισαγωγή ενός νέου αντικειμένου Meal στη βάση δεδομένων
+    //Μέθοδος για την εισαγωγή ενός νέου αντικειμένου Meal στη βάση δεδομένων
     public static void insertNewMeal(Meal newMeal) {
-       // Δημιουργία entity manager factory και entity manager για την επικοινωνία με τη βάση δεδομένων
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("MealsAppPU"); 
-        EntityManager em = emf.createEntityManager(); 
+        // Δημιουργία entity manager factory και entity manager για την επικοινωνία με τη βάση δεδομένων
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("MealsAppPU");
+        EntityManager em = emf.createEntityManager();
 
         try {
-             // Χρήση του named query για την εύρεση ενός αντικειμένου Meal βάσει του strmeal του
+            // Χρήση του named query για την εύρεση ενός αντικειμένου Meal βάσει του strmeal του
             newMeal = em.createNamedQuery("Meal.findByStrmeal", Meal.class)
                     .setParameter("strmeal", newMeal.getStrmeal())
-                    .getSingleResult(); 
+                    .getSingleResult();
 
             if (newMeal != null) {
                 // Αν υπάρχει ήδη αντικείμενο Meal με το ίδιο strmeal, δε γίνεται εισαγωγή στη βάση και επιστρέφεται η συνάρτηση
@@ -33,7 +33,7 @@ public class mealsQueryOperations {
             // Χρήση του named query "Meal.findBygetIdcategory" για την εύρεση όλων των Meal αντικειμένων που έχουν το ίδιο idcategory με το νέο αντικείμενο
             List<Meal> newMea2Meal = em.createNamedQuery("Meal.findBygetIdcategory", Meal.class)
                     .setParameter("idcategory", newMeal.getIdcategory())
-                    .getResultList(); 
+                    .getResultList();
 
             if (newMea2Meal != null) {
                 // Αν υπάρχουν ήδη αντικείμενα Meal με το ίδιο idcategory με το νέο αντικείμενο, αυτό σημαίνει ότι το νέο αντικείμενο έχει εισαχθεί από το χρήστη
@@ -50,43 +50,43 @@ public class mealsQueryOperations {
             // Αν δε βρεθεί κάποιο αντικείμενο Meal με το συγκεκριμένο idcategory, δε γίνεται τίποτα και συνεχίζεται η εισαγωγή στη βάση
         }
         // Αν δε βρεθεί ούτε αντικείμενο Meal με το ίδιο strmeal ούτε αντικείμενο Meal με το ίδιο idcategory, εισάγουμε το νέο αντικείμενο Meal στη βάση
-        em.getTransaction().begin(); 
-        em.persist(newMeal); 
-        em.getTransaction().commit(); 
-        
-        em.close(); 
-        emf.close(); 
+        em.getTransaction().begin();
+        em.persist(newMeal);
+        em.getTransaction().commit();
+
+        em.close();
+        emf.close();
     }
 
     //Μέθοδος για τη διαγραφή ενός αντικειμένου Meal 
     public static void deleteSingleMeal(String strMeal) {
         // Δημιουργία entity manager factory και entity manager για την επικοινωνία με τη βάση δεδομένων
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("MealsAppPU"); 
-        EntityManager em = emf.createEntityManager(); 
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("MealsAppPU");
+        EntityManager em = emf.createEntityManager();
         try {
             // Χρήση του named query για την εύρεση του αντικειμένου Meal βάσει του συγκεκριμένου strmeal
-            Meal meal = em.createNamedQuery("Meal.findByStrmeal", Meal.class).setParameter("strmeal", strMeal).getSingleResult(); 
-            
-            em.getTransaction().begin(); 
-            
+            Meal meal = em.createNamedQuery("Meal.findByStrmeal", Meal.class).setParameter("strmeal", strMeal).getSingleResult();
+
+            em.getTransaction().begin();
+
             // Διαγραφή του αντικειμένου Meal από τη βάση
-            em.remove(meal); 
-            em.getTransaction().commit(); 
-            
+            em.remove(meal);
+            em.getTransaction().commit();
+
         } catch (NoResultException e) {
-           // Αν δε βρεθεί κάποιο αντικείμενο Meal με το συγκεκριμένο strmeal, δε γίνεται τίποτα και συνεχίζεται η συνάρτηση
+            // Αν δε βρεθεί κάποιο αντικείμενο Meal με το συγκεκριμένο strmeal, δε γίνεται τίποτα και συνεχίζεται η συνάρτηση
         } finally {
             // Κλείσιμο του entity manager και του entity manager factory
-            em.close(); 
-            emf.close(); 
+            em.close();
+            emf.close();
         }
     }
 
     //Μέθοδος για τον έλεγχο ύπαρξης στη βάση δεδομένων ενός αντικειμένου Meal
     public static boolean findMealByStrMeal(String strmeal) {
         // Αρχικά θεωρούμε ότι το αντικείμενο Meal με το συγκεκριμένο strmeal δεν υπάρχει στη βάση
-        boolean result = false; 
-        
+        boolean result = false;
+
         // Δημιουργία entity manager factory και entity manager για την επικοινωνία με τη βάση δεδομένων
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("MealsAppPU");
         EntityManager em = emf.createEntityManager();
@@ -98,18 +98,18 @@ public class mealsQueryOperations {
                     .getSingleResult();
             if (meal.getStrmeal().equals(strmeal)) {
                 // Αν βρεθεί αντικείμενο Meal με το συγκεκριμένο strmeal, τότε το result γίνεται true
-                result = true; 
+                result = true;
             }
             em.getTransaction().begin();
             em.getTransaction().commit();
-            
+
         } catch (NoResultException e) {
             // Αν δε βρεθεί κάποιο αντικείμενο Meal με το συγκεκριμένο strmeal, δε γίνεται τίποτα και συνεχίζεται η συνάρτηση
         } finally {
             // Κλείσιμο του entity manager και του entity manager factory και επιστροφή του result
             em.close();
             emf.close();
-            return result; 
+            return result;
         }
     }
 
@@ -117,7 +117,7 @@ public class mealsQueryOperations {
     public static boolean findIfMealIsSavedByUser(String meal) {
         // Αρχικά θεωρούμε ότι το αντικείμενο Meal δεν έχει αποθηκευτεί από τον χρήστη
         boolean result = false;
-        
+
         // Δημιουργία entity manager factory και entity manager για την επικοινωνία με τη βάση δεδομένων
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("MealsAppPU");
         EntityManager em = emf.createEntityManager();
@@ -127,28 +127,28 @@ public class mealsQueryOperations {
             Meal searchMeal = em.createNamedQuery("Meal.findByStrmeal", Meal.class)
                     .setParameter("strmeal", meal)
                     .getSingleResult();
-            if (searchMeal.getIdmeal() == null) {
+            if (searchMeal.getIdmeal() == null || searchMeal.getIdmeal().equals("SavedByUser") ){
                 // Αν το idmeal είναι null, τότε το αντικείμενο Meal δεν έχει αποθηκευτεί από τον χρήστη
-                result = false; 
-               
+                result = false;
+
             } else {
                 // Αν το idmeal δεν είναι null, τότε το αντικείμενο Meal έχει αποθηκευτεί από τον χρήστη
                 result = true;
-               
+
             }
         } catch (NoResultException e) {
-           // Αν δε βρεθεί κάποιο αντικείμενο Meal με το συγκεκριμένο strmeal, δε γίνεται τίποτα και συνεχίζεται η συνάρτηση
+            // Αν δε βρεθεί κάποιο αντικείμενο Meal με το συγκεκριμένο strmeal, δε γίνεται τίποτα και συνεχίζεται η συνάρτηση
         } finally {
             // Κλείσιμο του entity manager και του entity manager factory και επιστροφή του result
             em.close();
             emf.close();
-            return result; 
+            return result;
         }
     }
 
     //Μέθοδος για την αύξηση του αριθμού επισκέψεων ενός γεύματος
     public static void addVisit(String strMeal) {
-                
+
         // Δημιουργία entity manager factory και entity manager για την επικοινωνία με τη βάση δεδομένων
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("MealsAppPU");
         EntityManager em = emf.createEntityManager();
@@ -160,12 +160,12 @@ public class mealsQueryOperations {
                     .setParameter("strmeal", strMeal)
                     .getSingleResult();
 
-             // Αύξηση του αριθμού επισκέψεων του αντικειμένου Meal κατά 1
+            // Αύξηση του αριθμού επισκέψεων του αντικειμένου Meal κατά 1
             meal.setTimesofvisit(meal.getTimesofvisit() + 1);
 
             em.persist(meal);
             em.getTransaction().commit();
-           
+
 
         } catch (NoResultException e) {
             // Αν δε βρεθεί κάποιο αντικείμενο Meal με το συγκεκριμένο strmeal, δε γίνεται τίποτα και συνεχίζεται η συνάρτηση
@@ -189,30 +189,30 @@ public class mealsQueryOperations {
         List<Meal> meals = null;
 
         try {
-             // Χρήση του named query για την επιστροφή των αντικειμένων Meal ταξινομημένων κατά φθίνουσα σειρά βάσει του αριθμού επισκέψεων
+            // Χρήση του named query για την επιστροφή των αντικειμένων Meal ταξινομημένων κατά φθίνουσα σειρά βάσει του αριθμού επισκέψεων
             meals = em.createNamedQuery("Meal.sortByTimesofVisit", Meal.class).getResultList();
         } catch (NoResultException e) {
-           // Αν δε βρεθεί κανένα αντικείμενο Meal, δε γίνεται τίποτα και συνεχίζει
+            // Αν δε βρεθεί κανένα αντικείμενο Meal, δε γίνεται τίποτα και συνεχίζει
         } finally {
-           // Commit και κλείσιμο του entity manager και του entity manager factory
+            // Commit και κλείσιμο του entity manager και του entity manager factory
             em.getTransaction().commit();
             em.close();
             emf.close();
         }
 
-       // Επιστροφή της λίστας με τα αντικείμενα Meal
+        // Επιστροφή της λίστας με τα αντικείμενα Meal
         return meals;
     }
 
     //Μέθοδος για την επιστροφή μιας λίστας παρόμοιων γευμάτων από τη βάση δεδομένων
     public static List<Meal> getLikeMealsFromDB(String strmeal) {
-       
+
         // Δημιουργία entity manager factory και entity manager για την επικοινωνία με τη βάση δεδομένων
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("MealsAppPU");
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
 
-       
+
         List<Meal> meals = null;
 
         try {
@@ -236,14 +236,14 @@ public class mealsQueryOperations {
             emf.close();
         }
 
-       // Επιστροφή λίστας με τα παρόμοια γεύματα που βρέθηκαν στη βάση δεδομένων
+        // Επιστροφή λίστας με τα παρόμοια γεύματα που βρέθηκαν στη βάση δεδομένων
         return meals;
 
     }
 
     //Μέθοδος για την επιστροφή ενός γεύματος από τη βάση δεδομένων βάσει του ονόματός του
     public static Meal getMealByStrMeal(String strmeal) {
-        
+
         // Δημιουργία entity manager factory και entity manager για την επικοινωνία με τη βάση δεδομένων
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("MealsAppPU");
         EntityManager em = emf.createEntityManager();
@@ -258,14 +258,14 @@ public class mealsQueryOperations {
 
             em.getTransaction().begin();
             em.getTransaction().commit();
-           
+
         } catch (NoResultException e) {
-           // Σε περίπτωση που δεν βρεθεί κανένα γεύμα, δεν γίνεται τίποτα
+            // Σε περίπτωση που δεν βρεθεί κανένα γεύμα, δεν γίνεται τίποτα
         } finally {
             // Κλείσιμο entity manager και entity manager factory
             em.close();
             emf.close();
-            
+
         }
         // Επιστροφή του γεύματος που βρέθηκε στη βάση δεδομένων
         return meal;
@@ -273,7 +273,7 @@ public class mealsQueryOperations {
 
     //Μέθοδος για την αποθήκευση ενός γεύματος στη βάση δεδομένων
     public static void saveMeal(Meal meal) {
-        
+
         // Δημιουργία entity manager factory και entity manager για την επικοινωνία με τη βάση δεδομένων
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("MealsAppPU");
         EntityManager em = emf.createEntityManager();
@@ -287,7 +287,7 @@ public class mealsQueryOperations {
 
             // Ενημέρωση του πλήθους επισκέψεων στο γεύμα
             meal.setTimesofvisit(oldmeal.getTimesofvisit());
-            
+
             // Ενημέρωση των πεδίων του παλιού γεύματος με τα νέα δεδομένα από το νέο γεύμα
             oldmeal.setIdmeal(meal.getIdmeal());
             oldmeal.setStrcategory(meal.getStrcategory());
@@ -336,11 +336,11 @@ public class mealsQueryOperations {
             oldmeal.setStrmeasure18(meal.getStrmeasure18());
             oldmeal.setStrmeasure19(meal.getStrmeasure19());
             oldmeal.setStrmeasure20(meal.getStrmeasure20());
-            
+
             // Αποθήκευση των αλλαγών στη βάση δεδομένων
             em.merge(oldmeal);
             em.getTransaction().commit();
-            
+
 
         } catch (NoResultException e) {
             // Σε περίπτωση που δεν βρεθεί κανένα γεύμα, δεν γίνεται τίποτα
