@@ -72,8 +72,14 @@ Relevant instructions can be found in the document "Οδηγίες Εγκατά�
 
 
 ### Indicative:
-```
+
 Snapshots from the implementation of project management, you can find details at folder "Instructions".
-```
+
 ProjectLibre and Gantt charts:
+
 <img width="845" alt="Screenshot 2023-03-28 at 09 56 14" src="https://user-images.githubusercontent.com/32077784/228154684-60962020-c460-45b8-b710-f1b551583b78.png">
+
+Burndown Chart:
+
+<img width="838" alt="Screenshot 2023-03-28 at 09 55 27" src="https://user-images.githubusercontent.com/32077784/228155587-fe0fe299-0669-4f7b-b3a9-3ee72879b79c.png">
+
