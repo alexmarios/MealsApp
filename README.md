@@ -1,6 +1,6 @@
-# MealsApp :spaghetti:
+# :spaghetti: MealsApp
 
-### Description:
+### :clipboard: Description:
 
   As part of the 3rd assignment of the course "Software Design" at Hellenic Open Univercity, 
   students were asked to develop an application called Meals App.
@@ -22,7 +22,7 @@ Some of the information that can be retrieved are:
   When the data has been extracted the application can also store/edit the data in a local database.
 
 
-### Project Objective:
+### :dart: Project Objective:
 
   The objective of the project as requested by the assignment is to extract the data from the API and present it to the user in a simple and stable way.
 Specifically, themealdb.com is an online database of recipes and meals from all over from all over the world. It features over 280 recipes, including traditional and contemporary dishes from various cuisines. With its user-friendly interface, the site is easy to navigate, allowing users to find recipes for any occasion.
@@ -35,7 +35,7 @@ The design of the application was made with the idea that new functions can be a
 without being burdened with complex methods or calculations.
 
 
-### Admissions:
+### :file_cabinet: Admissions:
 
 The flexibility of the code gives the general assumption that the Meals App can be extended with simple backend/frontend additions.
 The user can view the entity of a meal at any time in the local database and can pump or remove it if desired. The logic of the search in many ways is that it first detects if a meal exists in the API and then checks if it exists in the database and the user can accordingly select the data to be displayed.
@@ -73,7 +73,7 @@ Relevant instructions can be found in the document ["Οδηγίες Εγκατά
 ```
 
 
-### Indicative:
+### :chart_with_upwards_trend: Indicative:
 
 Snapshots from the implementation of project management, you can find more details at folder ["Instructions"](Instructions).
 
@@ -85,7 +85,7 @@ Burndown Chart:
 
 <img width="838" alt="Screenshot 2023-03-28 at 09 55 27" src="https://user-images.githubusercontent.com/32077784/228155587-fe0fe299-0669-4f7b-b3a9-3ee72879b79c.png">
 
-### Team: :handshake:
+### :handshake: Team:
 |Student|Role|
 |:---|:---|
 |`Alex Marios Remountakis`|Scrum Master and Back-End Developer, responsible for the development and maintenance of the db and API interfaces and Scrum.|
