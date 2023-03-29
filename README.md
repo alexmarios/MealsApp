@@ -4,6 +4,8 @@
 
   As part of the 3rd assignment of the course "Software Design" at Hellenic Open Univercity, 
   students were asked to develop an application called Meals App.
+  
+<img width="578" alt="Screenshot 2023-03-29 at 09 42 35" src="https://user-images.githubusercontent.com/32077784/228448082-8d878067-7465-439f-9cb1-5780e312618f.png">
 
   The application draws, processes and presents data from the website [TheMealDB](https://themealdb.com/api.php). 
 The Meals App provides these web services via REST (Representational State Transfer) in order to be used by any interested party.
@@ -46,7 +48,7 @@ We also considered that for random search to follow the above mentioned function
 
 As for the application, it was implemented in Java and specifically JDK 17.0.2 was used. While Apache Derby (version 10.14.2.0) was used for the database. The GUI was created with Swing.
 
-For the collaboration of the team members in writing the code, github was used and for IDE, Netbeans IDE 16 was used.
+For the collaboration of the team members in writing the code, GitHub was used and for IDE, NetBeans IDE 16 was used.
 
 Several tools were used for the Scrum processes, such as:
 ```
@@ -55,7 +57,7 @@ Several tools were used for the Scrum processes, such as:
 - Toggl (for recording the time each member spends on User Stories)
 - Midjourney (for visuals)
 ```
-Figma was also used for designing the GUI mockups and Visual Paradigm for and ProjectLibre for drawing Gantt charts
+Figma was also used for designing the GUI mockups and Visual Paradigm for and Project Libre for drawing Gantt charts
 File sharing was done with Dropbox, and Google Docs and Online MS were also used Office, for shared authoring of required documents.
 In order to compile the application and run it, the necessary library import must be done.
 Relevant instructions can be found in the document ["Οδηγίες Εγκατάστασης & Χρήσης.docx"](Instructions/Οδηγίες_Εγκατάστασης_&_Χρήσης.docx).
