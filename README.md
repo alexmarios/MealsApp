@@ -14,7 +14,7 @@ Some of the information that can be retrieved are:
 - Search a random meal by name.
 - Search for meals by meal category.
 - Filtering by meal category.
-- Search by meal type, search by meal type, search by ingredients, etc.
+- Search by meal type, type, ingredients, etc.
 ```
 
   When the data has been extracted the application can also store/edit the data in a local database.
