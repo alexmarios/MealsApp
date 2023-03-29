@@ -77,13 +77,18 @@ Relevant instructions can be found in the document ["Οδηγίες Εγκατά
 
 Snapshots from the implementation of project management, you can find more details at folder ["Instructions"](Instructions).
 
+Product Backlog:
+
+<img width="845" alt="Screenshot 2023-03-29 at 10 31 32" src="https://user-images.githubusercontent.com/32077784/228459882-5c3121ee-bc16-41c3-92b2-0b3071b2c18d.png">
+
+
 ProjectLibre and Gantt charts:
 
 <img width="845" alt="Screenshot 2023-03-28 at 09 56 14" src="https://user-images.githubusercontent.com/32077784/228154684-60962020-c460-45b8-b710-f1b551583b78.png">
 
 Burndown Chart:
 
-<img width="838" alt="Screenshot 2023-03-28 at 09 55 27" src="https://user-images.githubusercontent.com/32077784/228155587-fe0fe299-0669-4f7b-b3a9-3ee72879b79c.png">
+<img width="845" alt="Screenshot 2023-03-28 at 09 55 27" src="https://user-images.githubusercontent.com/32077784/228155587-fe0fe299-0669-4f7b-b3a9-3ee72879b79c.png">
 
 ### :handshake: Team:
 |Student|Role|
