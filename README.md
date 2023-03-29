@@ -88,6 +88,6 @@ Burndown Chart:
 ### Team: :handshake:
 |Student|Role|
 |:---|:---|
-|`Alex Marios Remountakis`|Scrum Master and Back-End Developer, responsible for the development of JPA db, API and Scrum.|
-|`Nikolaos Stefanatos`|Front-End Developer, responsible for development and maintenance of the interface of the application.|
-|`Michael Nikoltsios`|Full Stack Developer and Debugger helping and examining the code for errors that may occur.|
+|`Alex Marios Remountakis`|Scrum Master and Back-End Developer, responsible for the development and maintenance of the db and API interfaces and Scrum.|
+|`Nikolaos Stefanatos`|Front-End Developer and was responsible for the development and maintenance of the structure and interface of the application.|
+|`Michael Nikoltsios`|Debugger assisting in all levels of software development and reviewing the code for errors that may occur throughout the project.|
