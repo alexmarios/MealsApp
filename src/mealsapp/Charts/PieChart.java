@@ -7,7 +7,7 @@ package mealsapp.Charts;
 
 import java.text.NumberFormat;
 import java.util.List;
-import mealsapp.DB.mealsQueryOperations;
+import mealsapp.DB.MealsQueryOperations;
 import mealsapp.MealClasses.Meal;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
@@ -28,7 +28,7 @@ public class PieChart extends ApplicationFrame {
      * Ανακτά τα 15 πιο επισκεπτόμενα γεύματα και τα προσθέτει στο dataset.
      */
     public static DefaultPieDataset pieDataset() {
-        List<Meal> orderedMeal = mealsQueryOperations.getbyDecOrder();
+        List<Meal> orderedMeal = MealsQueryOperations.getbyDecOrder();
         final DefaultPieDataset dataset = new DefaultPieDataset();
         for (int i = 0; i < orderedMeal.size() && i <= 9; i++) {
             dataset.setValue(orderedMeal.get(i).getStrmeal(), orderedMeal.get(i).getTimesofvisit());

@@ -28,8 +28,8 @@ import mealsapp.API.JsonParsers;
 import mealsapp.MealClasses.Meal;
 import static mealsapp.Charts.ColumnChart.ColumnChart;
 import static mealsapp.Charts.PieChart.PieChart;
-import mealsapp.DB.mealsQueryOperations;
-import static mealsapp.GUI.commandList.meal;
+import mealsapp.DB.MealsQueryOperations;
+import static mealsapp.GUI.CommandList.meal;
 import mealsapp.MealClasses.MealCategory;
 
 public class MainForm extends javax.swing.JFrame {
@@ -1350,7 +1350,7 @@ public class MainForm extends javax.swing.JFrame {
                 //Inserts Accending Meal Categories to JTable and display them
 
                 mealCategories = JsonParsers.getAllMealCategories();
-                DefaultListModel<String> model = commandList.getCategoriesModel(mealCategories);
+                DefaultListModel<String> model = CommandList.getCategoriesModel(mealCategories);
                 jList3.setModel(model);
 
                 if ((model.isEmpty())) {
@@ -1361,7 +1361,7 @@ public class MainForm extends javax.swing.JFrame {
                 GeneralSearchPnl.setSelectedIndex(2);
                 sbcComboBox.setSelectedIndex(2);
                 areas = JsonParsers.getAllArea();
-                DefaultListModel<String> model = commandList.getAreaModel(areas);
+                DefaultListModel<String> model = CommandList.getAreaModel(areas);
                 jList5.setModel(model);
                 if ((model.isEmpty())) {
                     MainForm.errorFound("Failed to grab Areas, please check your Internet connection!", "Error");
@@ -1373,7 +1373,7 @@ public class MainForm extends javax.swing.JFrame {
                 GeneralSearchPnl.setSelectedIndex(3);
                 sbcComboBox.setSelectedIndex(3);
                 ingredients = JsonParsers.getAllIngredient();
-                DefaultListModel<String> model = commandList.getIngredientsModel(ingredients);
+                DefaultListModel<String> model = CommandList.getIngredientsModel(ingredients);
                 jList2.setModel(model);
                 if ((model.isEmpty())) {
                     MainForm.errorFound("Failed to grab Ingredients, please check your Internet connection!", "Error");
@@ -1414,7 +1414,7 @@ public class MainForm extends javax.swing.JFrame {
 
                 jTabbedPane2.setSelectedIndex(2);
                 // Set the table model to the ingredientsTable
-                StatsJTable.setModel(commandList.getTableModel());
+                StatsJTable.setModel(CommandList.getTableModel());
                 //Makes table not editable
                 StatsJTable.setDefaultEditor(Object.class, null);
             }
@@ -1425,7 +1425,7 @@ public class MainForm extends javax.swing.JFrame {
     private void sbnSearchBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sbnSearchBtnMousePressed
         try {
 
-            commandList.searchCommand(sbnTxt.getText());
+            CommandList.searchCommand(sbnTxt.getText());
         } catch (MalformedURLException ex) {
             Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -1450,7 +1450,7 @@ public class MainForm extends javax.swing.JFrame {
 
     private void deleteBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteBtnMousePressed
 
-        boolean validChoise = commandList.userDeletesMeal(sbnMealNameTxt.getText());
+        boolean validChoise = CommandList.userDeletesMeal(sbnMealNameTxt.getText());
         if (validChoise) {
 
             //Clears GUI
@@ -1509,14 +1509,14 @@ public class MainForm extends javax.swing.JFrame {
         dataFromUser.put("sbnImageLabel", sbnImageLabel.getText());
         editMode = false;
 
-        commandList.saveMeal(sbnMealNameTxt.getText(), dataFromUser);
+        CommandList.saveMeal(sbnMealNameTxt.getText(), dataFromUser);
     }//GEN-LAST:event_sbnSaveBtnMousePressed
 
     private void statsExpBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_statsExpBtnMousePressed
 
         int userView = statsComboMenu.getSelectedIndex();
         try {
-            commandList.printPDF(userView);
+            CommandList.printPDF(userView);
         } catch (FileNotFoundException ex) {
             Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);
         } catch (DocumentException ex) {
@@ -1538,7 +1538,7 @@ public class MainForm extends javax.swing.JFrame {
                 //searchByMealID(String userMeal, String idString)
                 for (int i = 0; i < meals.size(); i++) {
                     if (JListMeal.getSelectedValue().equals(meals.get(i).getStrmeal())) {
-                        commandList.searchByMealID(meals.get(i).getStrmeal(), meals.get(i).getIdmeal());
+                        CommandList.searchByMealID(meals.get(i).getIdmeal());
                     }
                 }
             }
@@ -1577,7 +1577,7 @@ public class MainForm extends javax.swing.JFrame {
                         jLabelMealCategoryImage.setText("Image Not Available");
                     }
                     meals = JsonParsers.getAllMealByCategory(chossenMealCategory.getStrcategory());
-                    JListMeal.setModel(commandList.updateModelMealList(meals));
+                    JListMeal.setModel(CommandList.updateModelMealList(meals));
 
                 }
             }
@@ -1595,7 +1595,7 @@ public class MainForm extends javax.swing.JFrame {
     private void RandomMealBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RandomMealBtnMousePressed
 
         try {
-            commandList.randomMeal();
+            CommandList.randomMeal();
 
         } catch (MalformedURLException ex) {
             Logger.getLogger(MainForm.class
@@ -1615,12 +1615,12 @@ public class MainForm extends javax.swing.JFrame {
 
             meals = JsonParsers.getAllMealBySearch(getAllMealsJsonString);
 
-            jList1.setModel(commandList.updateModelMealList(meals));
+            jList1.setModel(CommandList.updateModelMealList(meals));
 
         } else if (DBdataRadio.isSelected()) {
-            meals = mealsQueryOperations.getLikeMealsFromDB(searchValue);
+            meals = MealsQueryOperations.getLikeMealsFromDB(searchValue);
 
-            jList1.setModel(commandList.updateModelMealList(meals));
+            jList1.setModel(CommandList.updateModelMealList(meals));
         }
 
 
@@ -1635,7 +1635,7 @@ public class MainForm extends javax.swing.JFrame {
                 for (int i = 0; i < meals.size(); i++) {
 
                     if (jList6.getSelectedValue().equals(meals.get(i).getStrmeal())) {
-                        commandList.searchByMealID(meals.get(i).getStrmeal(), meals.get(i).getIdmeal());
+                        CommandList.searchByMealID(meals.get(i).getIdmeal());
                         FocusPanel.setSelectedIndex(1);
                     }
                 }
@@ -1656,7 +1656,7 @@ public class MainForm extends javax.swing.JFrame {
 
                     meals = JsonParsers.getAllMealByArea(jList5.getSelectedValue());
 
-                    jList6.setModel(commandList.updateModelMealList(meals));
+                    jList6.setModel(CommandList.updateModelMealList(meals));
 
                     /*for (int i = 0; i < mealCategories.size(); i++) {
                 if (jList3.getSelectedValue().equals(mealCategories.get(i).getStrcategory())) {
@@ -1683,7 +1683,7 @@ public class MainForm extends javax.swing.JFrame {
                         jLabelMealCategoryImage.setText("Image Not Available");
                     }
                     meals = JsonParsers.getAllMealByCategory(chossenMealCategory.getStrcategory());
-                    JListMeal.setModel(commandList.updateModelMealList(meals));*/
+                    JListMeal.setModel(CommandList.updateModelMealList(meals));*/
                 }
             }
         } catch (Exception e) {
@@ -1717,7 +1717,7 @@ public class MainForm extends javax.swing.JFrame {
                         jLabelMealIngreImage.setText("Image Not Available");
                     }
                     meals = JsonParsers.getAllMealByIngridient(ingredients.get(i)[0]);
-                    jList4.setModel(commandList.updateModelMealList(meals));
+                    jList4.setModel(CommandList.updateModelMealList(meals));
 
                 }
             }
@@ -1735,7 +1735,7 @@ public class MainForm extends javax.swing.JFrame {
                 for (int i = 0; i < meals.size(); i++) {
 
                     if (jList4.getSelectedValue().equals(meals.get(i).getStrmeal())) {
-                        commandList.searchByMealID(meals.get(i).getStrmeal(), meals.get(i).getIdmeal());
+                        CommandList.searchByMealID(meals.get(i).getIdmeal());
                         FocusPanel.setSelectedIndex(1);
                     }
                 }
@@ -1752,7 +1752,7 @@ public class MainForm extends javax.swing.JFrame {
 
                     try {
 
-                        commandList.searchedMealAndImportToGui(meals.get(i));
+                        CommandList.searchedMealAndImportToGui(meals.get(i));
                         FocusPanel.setSelectedIndex(1);
 
                     } catch (MalformedURLException ex) {
@@ -1769,9 +1769,9 @@ public class MainForm extends javax.swing.JFrame {
 
                     try {
 
-                        //commandList.searchedMealAndImportToGuiOnlyDB(meals.get(i));
+                        //CommandList.searchedMealAndImportToGuiOnlyDB(meals.get(i));
                         MainForm.displayMeal(meals.get(i));
-                        mealsQueryOperations.addVisit(meals.get(i).getStrmeal());
+                        MealsQueryOperations.addVisit(meals.get(i).getStrmeal());
                         FocusPanel.setSelectedIndex(1);
                         jList1.setModel(new DefaultListModel<>());
 
@@ -1794,7 +1794,7 @@ public class MainForm extends javax.swing.JFrame {
             GeneralSearchPnl.setSelectedIndex(3);
             sbcComboBox.setSelectedIndex(3);
             ingredients = JsonParsers.getAllIngredient();
-            DefaultListModel<String> model = commandList.getIngredientsModel(ingredients);
+            DefaultListModel<String> model = CommandList.getIngredientsModel(ingredients);
             jList2.setModel(model);
             if ((model.isEmpty())) {
                 MainForm.errorFound("Failed to grab Ingredients, please check your Internet connection!", "Error");
@@ -1821,7 +1821,7 @@ public class MainForm extends javax.swing.JFrame {
                             jLabelMealIngreImage.setText("Image Not Available");
                         }
                         meals = JsonParsers.getAllMealByIngridient(ingredients.get(i)[0]);
-                        jList4.setModel(commandList.updateModelMealList(meals));
+                        jList4.setModel(CommandList.updateModelMealList(meals));
 
                     }
 
@@ -1962,8 +1962,8 @@ public class MainForm extends javax.swing.JFrame {
 
     //Μέθοδος για τη λήψη των γευμάτων με βάση την κατηγορία τους
     private void fetchMealByCategory(String category) {
-        // Δημιουργία ενός αντικειμένου τύπου commandList για την αποστολή του αιτήματος στο API
-        commandList mealList = new commandList();
+        // Δημιουργία ενός αντικειμένου τύπου CommandList για την αποστολή του αιτήματος στο API
+        CommandList mealList = new CommandList();
 
         // Λήψη των γευμάτων για τη συγκεκριμένη κατηγορία
         List<String> meals = mealList.fetchMealsByCategory(category);

@@ -26,15 +26,10 @@ import javax.persistence.GenerationType;
 
 @NamedQueries({
     @NamedQuery(name = "MealCategory.findAll", query = "SELECT m FROM MealCategory m"),
-    
     @NamedQuery(name = "MealCategory.findByIdcategory", query = "SELECT m FROM MealCategory m WHERE m.idcategory = :idcategory"),
-    
     @NamedQuery(name = "MealCategory.findByStrcategory", query = "SELECT m FROM MealCategory m WHERE m.strcategory = :strcategory"),
-    
     @NamedQuery(name = "MealCategory.findByStrcategorythumb", query = "SELECT m FROM MealCategory m WHERE m.strcategorythumb = :strcategorythumb"),
-    
     @NamedQuery(name = "MealCategory.findByStrcategorydescription", query = "SELECT m FROM MealCategory m WHERE m.strcategorydescription = :strcategorydescription"),
-
     @NamedQuery(name = "MealCategory.findBycategoryAndDtype", query = "SELECT m FROM MealCategory m WHERE m.strcategory = :strcategory AND TYPE(m) = MealCategory")
 
 })

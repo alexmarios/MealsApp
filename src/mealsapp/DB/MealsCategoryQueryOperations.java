@@ -8,7 +8,7 @@ import javax.persistence.Persistence;
 import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
 
-public class mealsCategoryQueryOperations {
+public class MealsCategoryQueryOperations {
 
     // Μέθοδος για την επιστροφή μιας ταξινομημένης λίστας MealCategory βάση του id
     public static List<MealCategory> sortByIdcategory() {

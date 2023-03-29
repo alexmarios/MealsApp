@@ -3,7 +3,7 @@ package mealsapp.Charts;
 import java.awt.Desktop;
 import mealsapp.MealClasses.Meal;
 import java.io.File;
-import mealsapp.DB.mealsQueryOperations;
+import mealsapp.DB.MealsQueryOperations;
 import java.util.List;
 import com.itextpdf.text.PageSize;
 import com.itextpdf.text.Paragraph;
@@ -78,7 +78,7 @@ public class PrintList {
 
         try {
             // Λίστα με όλα τα γεύματα που έχουν καταγραφεί στη βάση δεδομένων, ταξινομημένα κατά φθίνουσα σειρά
-            List<Meal> meals = mealsQueryOperations.getbyDecOrder();// Λίστα με όλα τα γεύματα που έχουν καταγραφεί στη βάση δεδομένων, ταξινομημένα κατά φθίνουσα σειρά
+            List<Meal> meals = MealsQueryOperations.getbyDecOrder();// Λίστα με όλα τα γεύματα που έχουν καταγραφεί στη βάση δεδομένων, ταξινομημένα κατά φθίνουσα σειρά
 
             // Δημιουργία ενός νέου κενού αρχείου PDF
             Document document = new Document(PageSize.A4);// Δημιουργία ενός νέου κενού αρχείου PDF

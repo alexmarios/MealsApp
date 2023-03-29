@@ -6,7 +6,7 @@ package mealsapp.Charts;
 
 import java.util.List;
 import javax.swing.JFrame;
-import mealsapp.DB.mealsQueryOperations;
+import mealsapp.DB.MealsQueryOperations;
 import mealsapp.MealClasses.Meal;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.ChartFactory;
@@ -21,7 +21,7 @@ public class ColumnChart extends JFrame {
  * για τα πιο συχνά επισκεπτόμενα γεύματα και πόσες φορές τα επισκέφθηκε ο χρήστης.
  */
     public static DefaultCategoryDataset columnDataset() {
-        List<Meal> orderedMeal = mealsQueryOperations.getbyDecOrder();
+        List<Meal> orderedMeal = MealsQueryOperations.getbyDecOrder();
         final DefaultCategoryDataset dataset = new DefaultCategoryDataset();
         for (int i = 0; i < orderedMeal.size() && i <= 14; i++) {
             dataset.addValue(orderedMeal.get(i).getTimesofvisit(), "", orderedMeal.get(i).getStrmeal());

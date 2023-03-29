@@ -7,7 +7,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.NoResultException;
 import javax.persistence.Persistence;
 
-public class mealsQueryOperations {
+public class MealsQueryOperations {
 
     //Μέθοδος για την εισαγωγή ενός νέου αντικειμένου Meal στη βάση δεδομένων
     public static void insertNewMeal(Meal newMeal) {
